@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A 25-Year Vision in Motion | Simphiwe Mtetwa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --text-black: #121212;
+            --text-grey: #666666;
+            --accent-lime: #d4ff33;
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --radius-large: 40px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f8f8f8;
+            color: var(--text-black);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .full-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ====== PREMIUM FLOATING HEADER ====== */
+        .floating-header {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Hero Image - Full Width & Rounded */
+        .hero-section-v7 {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            border-radius: 0 0 var(--radius-large) var(--radius-large);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-section-v7 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title-card {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            background: #fff;
+            padding: 60px;
+            border-radius: var(--radius-large);
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .hero-title-card h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 4vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--accent-lime);
+            padding-left: 30px;
+        }
+
+        /* Content Blocks */
+        .content-block {
+            background: #fff;
+            border-radius: var(--radius-large);
+            padding: 100px 8%;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+        }
+
+        .sidebar-meta-v7 {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .green-accent-line {
+            width: 40px;
+            height: 4px;
+            background: var(--accent-lime);
+            margin-bottom: 20px;
+        }
+
+        .article-body-v7 {
+            font-size: 21px;
+            color: #1a1a1a;
+        }
+
+        .article-body-v7 p {
+            margin-bottom: 40px;
+        }
+
+        /* Bio Block */
+        .bio-block-v7 {
+            background: #000;
+            color: #fff;
+            border-radius: var(--radius-large);
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .bio-block-v7 img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-lime);
+        }
+
+        /* Other Insights */
+        .other-insights-v7 {
+            background: #fff;
+            padding: 100px 5%;
+            border-radius: var(--radius-large);
+            margin-bottom: 40px;
+        }
+        .v7-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .v7-card {
+            text-decoration: none;
+            color: inherit;
+        }
+        .v7-card-img {
+            width: 100%;
+            height: 250px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .v7-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .v7-card:hover .v7-card-img img {
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .content-block { grid-template-columns: 1fr; padding: 60px 30px; }
+            .hero-title-card { left: 20px; bottom: 20px; padding: 30px; width: 90%; }
+            .bio-block-v7 { flex-direction: column; text-align: center; padding: 40px; }
+            .v7-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ====== WEB VOICE CONTROLLER ====== */
+        .voice-controller {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #fff;
+            padding: 12px 24px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            z-index: 2000;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        .voice-controller.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .voice-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-lime);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .voice-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .voice-btn i {
+            color: #000;
+            font-size: 16px;
+        }
+
+        .voice-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .voice-info span {
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+        }
+
+        .voice-info strong {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-black);
+        }
+
+        .voice-wave {
+            display: flex;
+            gap: 3px;
+            height: 15px;
+            align-items: center;
+        }
+
+        .voice-wave div {
+            width: 3px;
+            height: 100%;
+            background: var(--accent-lime);
+            border-radius: 10px;
+            animation: wave 1s infinite alternate ease-in-out;
+            animation-play-state: paused;
+        }
+
+        .voice-controller.playing .voice-wave div {
+            animation-play-state: running;
+        }
+
+        @keyframes wave {
+            0% { height: 5px; }
+            100% { height: 15px; }
+        }
+
+        .voice-wave div:nth-child(2) { animation-delay: 0.1s; }
+        .voice-wave div:nth-child(3) { animation-delay: 0.2s; }
+        .voice-wave div:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+
+<body>
+
+    <header class="floating-header">
+        <a href="NEW.HTML" class="nav-logo">
+            <img src="https://www.image2url.com/r2/default/images/1777649055436-1057d549-9fe6-4e04-b970-568610a4c0a0.png" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="NEW.HTML"><i class="fas fa-home"></i></a></li>
+            <li><a href="NEW.HTML">Expertise</a></li>
+            <li><a href="INSIGHTS.HTML">Insights</a></li>
+            <li><a href="INSIGHTS2.HTML">Insights (2)</a></li>
+            <li><a href="INSIGHTS3.HTML">Insights (3)</a></li>
+            <li><a href="INSIGHTS4.HTML">Insights (4)</a></li>
+            <li><a href="INSIGHTS5.HTML">Insights (5)</a></li>
+            <li><a href="INSIGHTS6.HTML">Insights (6)</a></li>
+            <li><a href="INSIGHTS7.HTML">Insights (7)</a></li>
+            <li><a href="#">Articles</a></li>
+        </ul>
+    </header>
+
+    <main class="full-container">
+        <!-- Edge-to-Edge Hero -->
+        <section class="hero-section-v7 reveal">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&h=800&fit=crop" alt="Vision">
+            <div class="hero-title-card">
+                <span style="font-size: 11px; font-weight:800; color: var(--text-grey); text-transform:uppercase; letter-spacing:2px; margin-bottom:15px; display:block;">Editor's View, South Africa</span>
+                <h1>A 25-Year Vision in Motion</h1>
+                <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                    <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=96&d=mm&r=g" alt="Simphiwe" style="width: 40px; height:40px; border-radius:50%;">
+                    <span style="font-weight: 700; font-size: 14px;">Simphiwe Mtetwa</span>
+                </div>
+            </div>
+        </section>
+
+        <div style="padding: 0 40px;">
+            <!-- Main Content Card -->
+            <section class="content-block reveal">
+                <aside class="sidebar-meta-v7">
+                    <div class="green-accent-line"></div>
+                    <h3 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 20px;">The Indaba</h3>
+                    <p style="font-size: 14px; color: var(--text-grey);">A critical step in shaping the depth, direction and intellectual integrity of what we are building.</p>
+                </aside>
+
+                <article class="article-body-v7">
+                    <p>What an extraordinary month this has been. As you read this—perhaps early in the morning—my team and I are convening a private Intellectual Foundation session with Professor Steven Friedman of the University of Johannesburg. This closed session brings together confirmed and conditional speakers for the CSI Indaba, and marks a critical step in shaping the depth, direction and intellectual integrity of what we are building.</p>
+
+                    <p>From the outset, we have been intentional about what the CSI Indaba must be. Not simply another convening, but a platform that delivers clear value, sharp thinking, and meaningful contribution to the sector. The Intellectual Foundation sessions are a key part of that intent—ensuring that what is presented on stage aligns with what our delegates truly need from this space.</p>
+
+                    <p>This does not exist in isolation. South Africa is home to many exceptional platforms advancing the CSI agenda, and we acknowledge the role they continue to play in driving growth and transformation across the sector. We have learned from them, and we respect the ground they have laid. At the same time, we are building something distinct.</p>
+
+                    <p>I would like to extend my sincere thanks to every individual who submitted a speaker proposal earlier this year. Each 600-word submission represented not only an idea, but a commitment to shaping the future of CSI. We read every single one—personally, I read nearly all of them in full. That process was important to us. It was about recognising your voice, your thinking, and your contribution to this industry.</p>
+
+                    <p>To those selected as speakers—congratulations. To those in the conditional category—congratulations. And to those not selected this year, this is not a reflection of your work, but rather a reflection of a very deliberate and focused first-year agenda.</p>
+
+                    <p>Because the CSI Indaba is not a once-off event. It is a 25-year vision. What you are beginning to see now—monthly webinars, ongoing podcast conversations, curated engagements—is the start of a continuum. A build-up that is responsive to the sector, aligned to your needs, and designed to deepen the quality of discourse long before we gather in person.</p>
+
+                    <p>We are also seeing new audiences emerge, alongside a broader and more diverse set of partners joining this journey. That, in itself, is a powerful signal of what is possible. Tickets are now at full price, and I encourage you to secure your place. Those who join us early—particularly in April—will gain access to our full webinar series at no additional cost. These sessions are not supplementary; they are foundational to the Indaba experience.</p>
+
+                    <p>In the coming months, we will be joined by voices such as clinical psychologist Nomfundo Mogapi, among others, as we continue to build towards a programme that is both rigorous and relevant. As you consider your participation, I encourage you to be deliberate. Be clear about what you seek to gain, and equally clear about what you intend to contribute.</p>
+
+                    <p>Because ultimately, our collective responsibility is simple: to drive impact, enable progress, and serve our communities with integrity—while ensuring that the work we do is recognised, valued, and properly compensated. This is the work. And this is just the beginning.</p>
+                </article>
+            </section>
+
+            <!-- Final Bio Card -->
+            <section class="bio-block-v7 reveal">
+                <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=200&d=mm&r=g" alt="Simphiwe">
+                <div>
+                    <h2 style="font-family: var(--font-serif); font-size: 48px; margin-bottom: 20px;">Simphiwe Mtetwa</h2>
+                    <p style="font-size: 18px; opacity: 0.8; line-height: 1.6;">Simphiwe Mtetwa is South Africa’s leading Corporate Social Responsibility news, media and publishing firm. We create content on social responsibility, helping government, corporates, consultants, NPOs and NGOs to reach their target markets through appropriate, targeted development news.</p>
+                </div>
+            </section>
+
+            <!-- Other Insights Section -->
+            <section class="other-insights-v7 reveal">
+                <div class="green-accent-line"></div>
+                <h2 style="font-family: var(--font-serif); font-size: 42px; margin-bottom: 50px;">Other Insights</h2>
+                
+                <div class="v7-grid">
+                    <a href="INSIGHTS6.HTML" class="v7-card">
+                        <div class="v7-card-img">
+                            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcbb6_shutterstock_2306470941.avif" alt="Sharp Meeting">
+                        </div>
+                        <div class="v7-card-info">
+                            <span>April 16, 2026</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 22px; line-height: 1.3;">An MT is only as sharp as the chairman</h3>
+                        </div>
+                    </a>
+                    <a href="INSIGHTS5.HTML" class="v7-card">
+                        <div class="v7-card-img">
+                            <img src="https://simphiwemtetwa.africa/wp-content/uploads/2026/04/SIMPHIWE-MTETWA-1920-x-825-mm-12-scaled.jpg" alt="Inequality">
+                        </div>
+                        <div class="v7-card-info">
+                            <span>April 15, 2026</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 22px; line-height: 1.3;">Why Inequality Persists</h3>
+                        </div>
+                    </a>
+                    <a href="#" class="v7-card">
+                        <div class="v7-card-img">
+                            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcb82_Zonder%20bila%20geen%20zicht%20op%20het%20werk%20-%20bijgesneden.avif" alt="Insight">
+                        </div>
+                        <div class="v7-card-info">
+                            <span>March 5, 2026</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 22px; line-height: 1.3;">Without bilas no view of the work</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Voice Controller -->
+    <div class="voice-controller" id="voiceController">
+        <button class="voice-btn" id="playVoiceBtn">
+            <i class="fas fa-play" id="playIcon"></i>
+        </button>
+        <div class="voice-info">
+            <span>Listen to Article</span>
+            <strong>Web Voice AI (Female)</strong>
+        </div>
+        <div class="voice-wave">
+            <div></div><div></div><div></div><div></div>
+        </div>
+    </div>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // WEB VOICE (TTS) LOGIC
+        const voiceController = document.getElementById('voiceController');
+        const playVoiceBtn = document.getElementById('playVoiceBtn');
+        const playIcon = document.getElementById('playIcon');
+        let isPlaying = false;
+        let utterance = null;
+        let selectedVoice = null;
+
+        // Better voice selection
+        function loadVoices() {
+            const voices = window.speechSynthesis.getVoices();
+            // Priority list for high-quality female English voices
+            selectedVoice = voices.find(v => v.name.includes('Google UK English Female') && v.lang.includes('en')) ||
+                           voices.find(v => v.name.includes('Google US English') && v.name.includes('Female')) ||
+                           voices.find(v => v.name.includes('Samantha') || v.name.includes('Victoria')) ||
+                           voices.find(v => v.name.includes('Zira')) ||
+                           voices.find(v => v.lang.includes('en') && (v.name.includes('Female') || v.name.includes('female'))) ||
+                           voices.find(v => v.lang.includes('en'));
+        }
+
+        // Handle async voice loading
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices();
+
+        // Show controller on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                voiceController.classList.add('visible');
+            } else {
+                voiceController.classList.remove('visible');
+            }
+        });
+
+        function stopSpeaking() {
+            window.speechSynthesis.cancel();
+            isPlaying = false;
+            playIcon.className = 'fas fa-play';
+            voiceController.classList.remove('playing');
+        }
+
+        function speakArticle() {
+            window.speechSynthesis.cancel();
+
+            const articleText = Array.from(document.querySelectorAll('.article-body-v7 p'))
+                .map(el => el.innerText)
+                .join('. ');
+
+            utterance = new SpeechSynthesisUtterance(articleText);
+            
+            if (selectedVoice) {
+                utterance.voice = selectedVoice;
+            } else {
+                loadVoices(); // Try one more time
+                if (selectedVoice) utterance.voice = selectedVoice;
+            }
+
+            utterance.rate = 1.0;
+            utterance.pitch = 1.05;
+
+            utterance.onend = () => {
+                stopSpeaking();
+            };
+
+            window.speechSynthesis.speak(utterance);
+            isPlaying = true;
+            playIcon.className = 'fas fa-stop';
+            voiceController.classList.add('playing');
+        }
+
+        playVoiceBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                stopSpeaking();
+            } else {
+                speakArticle();
+            }
+        });
+
+        window.onbeforeunload = () => {
+            window.speechSynthesis.cancel();
+        };
+    </script>
+</body>
+
+</html>

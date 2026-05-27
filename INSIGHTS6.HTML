@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An MT is as sharp as the chairman | Simphiwe Mtetwa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --text-black: #121212;
+            --text-grey: #555555;
+            --accent-lime: #d4ff33;
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --radius-large: 40px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-white);
+            color: var(--text-black);
+            line-height: 1.6;
+        }
+
+        /* ====== HEADER ====== */
+        .floating-header {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* ====== SPLIT HERO ====== */
+        .hero-v6 {
+            padding: 140px 40px 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .hero-v6-content {
+            padding-right: 40px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-grey);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .hero-v6-content h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(40px, 5vw, 84px);
+            line-height: 1;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--accent-lime);
+            padding-left: 30px;
+        }
+
+        .hero-v6-content p {
+            font-size: 18px;
+            color: var(--text-grey);
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .hero-v6-image {
+            width: 100%;
+            height: 700px;
+            border-radius: var(--radius-large);
+            overflow: hidden;
+        }
+
+        .hero-v6-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ====== ARTICLE BODY ====== */
+        .body-v6 {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 100px;
+        }
+
+        .sidebar-v6 {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-v6-item {
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-v6-item span {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-grey);
+            margin-bottom: 10px;
+        }
+
+        .main-text-v6 {
+            font-size: 21px;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        .main-text-v6 h3, .main-text-v6 h4 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            margin: 60px 0 30px;
+        }
+
+        .main-text-v6 p {
+            margin-bottom: 40px;
+        }
+
+        .main-text-v6 blockquote {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-style: italic;
+            line-height: 1.2;
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin: 60px 0;
+            color: #000;
+            text-align: center;
+        }
+
+        .list-v6 {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .list-v6 li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .list-v6 li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 20px;
+            height: 4px;
+            background: var(--accent-lime);
+        }
+
+        .list-v6 strong {
+            display: block;
+            font-size: 24px;
+            font-family: var(--font-serif);
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-v6 { grid-template-columns: 1fr; padding-top: 100px; }
+            .hero-v6-content { padding-right: 0; }
+            .body-v6 { grid-template-columns: 1fr; }
+            .sidebar-v6 { position: relative; top: 0; display: flex; gap: 40px; flex-wrap: wrap; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="floating-header">
+        <a href="NEW.HTML" class="nav-logo">
+            <img src="https://www.image2url.com/r2/default/images/1777649055436-1057d549-9fe6-4e04-b970-568610a4c0a0.png" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="NEW.HTML"><i class="fas fa-home"></i></a></li>
+            <li><a href="NEW.HTML">Expertise</a></li>
+            <li><a href="INSIGHTS.HTML">Insights</a></li>
+            <li><a href="INSIGHTS2.HTML">Insights (2)</a></li>
+            <li><a href="INSIGHTS3.HTML">Insights (3)</a></li>
+            <li><a href="INSIGHTS4.HTML">Insights (4)</a></li>
+            <li><a href="INSIGHTS5.HTML">Insights (5)</a></li>
+            <li><a href="INSIGHTS6.HTML">Insights (6)</a></li>
+            <li><a href="INSIGHTS7.HTML">Insights (7)</a></li>
+            <li><a href="#">Articles</a></li>
+        </ul>
+    </header>
+
+    <section class="hero-v6">
+        <div class="hero-v6-content reveal">
+            <a href="INSIGHTS.HTML" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to overview
+            </a>
+            <h1>An MT is only as sharp as the <span class="italic-accent">chairman</span></h1>
+            <p>A good agenda, capable participants and room for everyone's input are important conditions for a valuable and productive consultation. But in many MT’s, it is underestimated how much the quality of the meeting depends on the chairman.</p>
+        </div>
+        <div class="hero-v6-image reveal" style="transition-delay: 0.2s;">
+            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcbb6_shutterstock_2306470941.avif" alt="Sharp Meeting">
+        </div>
+    </section>
+
+    <main class="body-v6">
+        <aside class="sidebar-v6 reveal">
+            <div class="sidebar-v6-item">
+                <span>By</span>
+                <strong style="font-size: 16px;">Simphiwe Mtetwa</strong>
+            </div>
+            <div class="sidebar-v6-item">
+                <span>Date</span>
+                <strong style="font-size: 16px;">16 Apr 2026</strong>
+            </div>
+            <div class="sidebar-v6-item" style="border:0;">
+                <span>Topic</span>
+                <strong style="font-size: 16px;">Leadership, CSI Strategy</strong>
+            </div>
+        </aside>
+
+        <article class="main-text-v6 reveal">
+            <p>A chairman is not just a participant with a little more speaking time, but the one who determines whether the conversation is sharp enough to come to workable decisions. Because if the chairman does not ask for precision, no one will. And then a management team consisting of experienced, smart and responsible people can also come to weak decisions.</p>
+
+            <p>When assumptions, differences, doubts, alternatives and new perspectives remain unspoken and the chairman does nothing about them, ambiguities and dissatisfaction shift to after the meeting. And the haggling in the implementation begins.</p>
+
+            <h4>Collegiality is not enough</h4>
+            <p>Chairing well is balancing between sharpness and collegiality. You want to give space to points of view and ideas, deal carefully with relationships and not intervene more heavily than necessary. But where collegiality overshoots into restraint, decisions become less sharp.</p>
+
+            <blockquote>Many leaders are used to emphasizing giving space, connecting and equality. In meetings, that's not enough.</blockquote>
+
+            <h3>Where chairmen lose sharpness</h3>
+            <p>Chairmanship weakens as soon as the chairman spares the atmosphere too much, participates in the content or takes the participants through the conversation too quickly. Do you recognize these 3 'weak spots'?</p>
+
+            <ul class="list-v6">
+                <li>
+                    <strong>Maintaining harmony</strong>
+                    As soon as the conversation becomes more exciting, many chairmen tend to spare the relationship. They don't want to cause irritation, don't cut anyone off, don't ask too hard questions and don't exercise power too visibly.
+                </li>
+                <li>
+                    <strong>Participating too much on content</strong>
+                    Many leaders focus their attention in meetings primarily on dossiers, positions, risks and outcomes. But a chairman who moves on to arguing and persuading quickly loses control of the conversation.
+                </li>
+                <li>
+                    <strong>Wanting to speed up</strong>
+                    Decisions must go ahead, the meeting must not overrun. As a result, presidents are quick to opt for pace over precision. But a conversation is not productive because it moves quickly.
+                </li>
+            </ul>
+
+            <h3>What strong chairmen do well</h3>
+            <p>Good chairmanship does not require permanent rigid control or constant intervention. But if there is ambiguity, tension rises or a decision becomes difficult, the chairman must visibly take responsibility for this.</p>
+
+            <ul class="list-v6">
+                <li>
+                    <strong>Distinguish what the participants have to do</strong>
+                    Not every item on the agenda requires the same attention and action. Sometimes participants have to explore, sometimes weigh, and sometimes decide. The chairman helps by making that distinction clear.
+                </li>
+                <li>
+                    <strong>Discuss where differences lie</strong>
+                    As soon as two people mean something else, it must become visible. Not smoothing out, but elaborating: Is this difference about content, feasibility, risk, pace, ownership or priority?
+                </li>
+                <li>
+                    <strong>Underline what has been decided</strong>
+                    Many decisions end with a feeling of agreement, but with too little guidance. Strong chairing therefore also requires a decisive conclusion. What is decided here? What exactly not?
+                </li>
+            </ul>
+        </article>
+    </main>
+
+    <section class="more-insights-v6 reveal">
+        <div class="more-insights-inner">
+            <div class="sidebar-v6-item" style="border-bottom: 1px solid #eee; margin-bottom: 40px; padding-bottom: 20px;">
+                <span>Discover More</span>
+                <h2 style="font-family: var(--font-serif); font-size: 32px;">Other Insights</h2>
+            </div>
+            
+            <div class="insights-grid-v6">
+                <!-- Article 1 -->
+                <a href="#" class="insight-card-v6">
+                    <div class="insight-card-image">
+                        <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcb82_Zonder%20bila%20geen%20zicht%20op%20het%20werk%20-%20bijgesneden.avif" alt="Insight 1">
+                    </div>
+                    <div class="insight-card-content">
+                        <span>March 5, 2026</span>
+                        <h3>Without bilas no view of the work</h3>
+                    </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="#" class="insight-card-v6">
+                    <div class="insight-card-image">
+                        <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcbb8_bf5bc566e0213f5b083eae41b4d249e4.avif" alt="Insight 2">
+                    </div>
+                    <div class="insight-card-content">
+                        <span>January 29, 2026</span>
+                        <h3>Say goodbye to the Polish Diet</h3>
+                    </div>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="#" class="insight-card-v6">
+                    <div class="insight-card-image">
+                        <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcb81_985eeee20a2738cba702e73b4299beb6.avif" alt="Insight 3">
+                    </div>
+                    <div class="insight-card-content">
+                        <span>December 17, 2025</span>
+                        <h3>Informal power: use that energy</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .more-insights-v6 {
+            background: #fff;
+            padding: 100px 40px;
+            border-top: 1px solid #eee;
+        }
+        .more-insights-inner {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .insights-grid-v6 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .insight-card-v6 {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .insight-card-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .insight-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .insight-card-v6:hover .insight-card-image img {
+            transform: scale(1.05);
+        }
+        .insight-card-content span {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-grey);
+            margin-bottom: 10px;
+        }
+        .insight-card-content h3 {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        @media (max-width: 768px) {
+            .insights-grid-v6 { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

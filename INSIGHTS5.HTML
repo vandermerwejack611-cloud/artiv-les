@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article V5 | Simphiwe Mtetwa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --text-black: #000000;
+            --text-grey: #666666;
+            --accent-lime: #d4ff33;
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            --radius-large: 40px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f8f8f8; /* Soft background to make white containers pop */
+            color: var(--text-black);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .full-container {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ====== PREMIUM FLOATING HEADER ====== */
+        .floating-header {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 1400px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* ====== ARTICLE CONTENT ====== */
+        .article-v5-wrapper {
+            margin-top: 100px;
+        }
+
+        /* Hero Image - Full Width & Rounded */
+        .hero-section-v5 {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            border-radius: 0 0 var(--radius-large) var(--radius-large);
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .hero-section-v5 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title-card {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            background: #fff;
+            padding: 60px;
+            border-radius: var(--radius-large);
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .hero-title-card h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 4vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--accent-lime);
+            padding-left: 30px;
+        }
+
+        /* Content Blocks - White Cards with Rounded Corners */
+        .content-block {
+            background: #fff;
+            border-radius: var(--radius-large);
+            padding: 100px 8%;
+            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+        }
+
+        .sidebar-meta-v5 {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .green-accent-line {
+            width: 40px;
+            height: 4px;
+            background: var(--accent-lime);
+            margin-bottom: 20px;
+        }
+
+        .article-body-v5 {
+            font-size: 21px;
+            color: #1a1a1a;
+        }
+
+        .article-body-v5 p {
+            margin-bottom: 40px;
+        }
+
+        .dropcap {
+            float: left;
+            font-family: var(--font-serif);
+            font-size: 110px;
+            line-height: 80px;
+            padding-right: 15px;
+            color: #000;
+        }
+
+        /* Quote Block */
+        .quote-block-v5 {
+            grid-column: 1 / -1;
+            background: #000;
+            color: #fff;
+            padding: 100px 10%;
+            border-radius: var(--radius-large);
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-block-v5 h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 5vw, 60px);
+            font-style: italic;
+            line-height: 1.2;
+            z-index: 2;
+            position: relative;
+        }
+
+        .quote-block-v5::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 60px;
+            background: var(--accent-lime);
+        }
+
+        /* Audio Pill */
+        .audio-pill-v5 {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 25px;
+            border-left: 5px solid var(--accent-lime);
+            margin-bottom: 40px;
+        }
+
+        /* Bio Block */
+        .bio-block-v5 {
+            background: #000;
+            color: #fff;
+            border-radius: var(--radius-large);
+            padding: 80px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .bio-block-v5 img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-lime);
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .content-block { grid-template-columns: 1fr; padding: 60px 30px; }
+            .hero-title-card { left: 20px; bottom: 20px; padding: 30px; width: 90%; }
+            .bio-block-v5 { flex-direction: column; text-align: center; padding: 40px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="floating-header" id="mainHeader">
+        <a href="NEW.HTML" class="nav-logo">
+            <img src="https://www.image2url.com/r2/default/images/1777649055436-1057d549-9fe6-4e04-b970-568610a4c0a0.png" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="NEW.HTML"><i class="fas fa-home"></i></a></li>
+            <li><a href="NEW.HTML">Expertise</a></li>
+            <li><a href="INSIGHTS.HTML">Insights</a></li>
+            <li><a href="INSIGHTS2.HTML">Insights (2)</a></li>
+            <li><a href="INSIGHTS3.HTML">Insights (3)</a></li>
+            <li><a href="INSIGHTS4.HTML">Insights (4)</a></li>
+            <li><a href="INSIGHTS5.HTML">Insights (5)</a></li>
+            <li><a href="INSIGHTS6.HTML">Insights (6)</a></li>
+            <li><a href="INSIGHTS7.HTML">Insights (7)</a></li>
+            <li><a href="#">Articles</a></li>
+        </ul>
+    </header>
+
+    <main class="full-container">
+            <!-- Edge-to-Edge Hero -->
+            <section class="hero-section-v5 reveal">
+                <img src="https://simphiwemtetwa.africa/wp-content/uploads/2026/04/SIMPHIWE-MTETWA-1920-x-825-mm-12-scaled.jpg" alt="Hero">
+                <div class="hero-title-card">
+                    <span class="meta-v5" style="font-size: 11px; font-weight:800; color: var(--text-grey); text-transform:uppercase; letter-spacing:2px; margin-bottom:15px; display:block;">Conference, CSI Insight</span>
+                    <h1>Why Inequality Persists: Slaves Made a Deal with Their Masters and The Children of The Slaves Continue to uphold the Masters’ Deal</h1>
+                    <div style="display: flex; align-items: center; gap: 15px; margin-top: 20px;">
+                        <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=96&d=mm&r=g" alt="Simphiwe" style="width: 40px; height:40px; border-radius:50%;">
+                        <span style="font-weight: 700; font-size: 14px;">Simphiwe Mtetwa</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inner content still needs some padding for readability -->
+            <div style="padding: 0 40px;">
+                <!-- Main Content Card -->
+                <section class="content-block reveal">
+                <aside class="sidebar-meta-v5">
+                    <div class="green-accent-line"></div>
+                    <h3 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 20px;">The Podcast</h3>
+                    <div class="audio-pill-v5">
+                        <audio controls style="width: 100%;">
+                            <source src="https://simphiwemtetwa.africa/wp-content/uploads/2026/04/SIMPHIWE-MTETWA-1920-x-825-mm-1.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-grey);">Listen to Simphiwe Mtetwa discuss the historical arithmetic of corporate South Africa.</p>
+                </aside>
+
+                <article class="article-body-v5">
+                    <p><span class="dropcap">T</span>here is a detail from South Africa’s corporate history that deserves far greater attention than it receives — and it belongs, fittingly, at the beginning of this story. In the mid-1980s, as apartheid entered its final phase and pressure mounted both domestically and internationally, Anglo-American, the most powerful mining conglomerate in the country at the time, did not simply wait for history to unfold. It prepared for it.</p>
+
+                    <p>Under the leadership of its chairman Gavin Relly, and driven by executive Clem Sunter, the company developed a series of scenario-planning models that would later become widely known as the “High Road” and the “Low Road”. These were not abstract exercises. Sunter presented these scenarios to the cabinet of F. W. de Klerk and engaged, shortly before his release, with Nelson Mandela.</p>
+
+                    <p>By the early 1990s, the Montfleur Scenario Exercise had expanded this work, bringing together political leaders, business figures, trade unionists and intellectuals to map the country’s possible futures. Business, in other words, had done its arithmetic long before the negotiations began. It had examined the full range of outcomes, calculated what would need to be conceded to preserve the system, and quietly determined that what it was willing to offer would be only a fraction of what it possessed.</p>
+                </article>
+
+                <!-- Full Width Quote inside the Grid -->
+                <div class="quote-block-v5 reveal">
+                    <h2>"Slaves made a deal with their masters!"</h2>
+                    <span style="display:block; margin-top:30px; font-weight:700; color:var(--accent-lime); text-transform:uppercase; letter-spacing:2px;">— Steven Friedman</span>
+                </div>
+
+                <aside class="sidebar-meta-v5">
+                    <div class="green-accent-line"></div>
+                    <h3 style="font-family: var(--font-serif); font-size: 24px; margin-bottom: 20px;">The Insight</h3>
+                    <p style="font-size: 14px; color: var(--text-grey);">Understanding the distinction between insiders and outsiders in the modern economy.</p>
+                </aside>
+
+                <article class="article-body-v5">
+                    <p>It is an image that is difficult to shake: think about it, slaves seated at a table, negotiating with their masters. The force of that idea became clearer to me through an entirely ordinary, domestic experience. Recently, I had to carry out some maintenance on my house. There were cracked tiles, peeling paint, and a roof beginning to yield to the Johannesburg rains. I sat down and worked through the costs — tiles, waterproofing, sealant, labour — and arrived at a figure of roughly R10,000.</p>
+
+                    <p>Enough to see the house safely through winter. But there was something I did not say aloud at the time. I could afford R10,000 precisely because I had considerably more than R10,000. My willingness to spend that amount rested on a quiet certainty: that doing so would not destabilise me. The apparent generosity of the gesture — if it can even be called that — was entirely relative to what remained unseen.</p>
+
+                    <p>That small moment stayed with me long after the last tile had been laid. This moment serves, in its own quiet way, as a precise metaphor for how inequality in South Africa was constructed—and why, thirty years into democracy, it persists. As liberation became inevitable, those who controlled economic power did not simply yield. They prepared. They calculated, with care, how much they were willing to place on the table—and they ensured that what they offered would not threaten what they intended to keep.</p>
+
+                    <p>This is not a moral judgement on those who negotiated the transition. It is an observation about power, context and human psychology. When a door has been closed to you for a lifetime, your first impulse when it opens is not to question the architecture of the room. It is to step inside. Yet the room — and the table within it — had already been designed. This is the foundation of Friedman’s central argument: that South Africa is divided not simply by race or class, but by a more enduring distinction between insiders and outsiders.</p>
+
+                    <p>Under apartheid, this divide was explicitly racial. Today, it is formally economic, though still deeply shaped by the racial architecture of the past. What is striking is not only that the divide persists but also that the original settlement produced a particular kind of insider class — one that inherited access to the economy but not necessarily the freedom to reimagine it. What Friedman ultimately calls for is not incremental reform, but a shift in imagination — a willingness to confront the structural limits embedded in the original settlement. Those who came to the negotiating table with power understood something fundamental: you can only give away what you are prepared to lose. What was offered was carefully calibrated. It was enough to secure transition, but not enough to fundamentally redistribute power. Thirty years later, South Africa remains shaped by that calculation. The challenge now is not simply to do more within the existing framework but to question the framework itself.</p>
+                </article>
+            </section>
+
+            <!-- Final Bio Card -->
+            <section class="bio-block-v5 reveal">
+                <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=200&d=mm&r=g" alt="Simphiwe">
+                <div>
+                    <h2 style="font-family: var(--font-serif); font-size: 48px; margin-bottom: 20px;">Simphiwe Mtetwa</h2>
+                    <p style="font-size: 18px; opacity: 0.8; line-height: 1.6;">South Africa’s leading Corporate Social Responsibility news firm. We create content on social responsibility, helping government, corporates, and NGOs reach their target markets through targeted development news.</p>
+                </div>
+            </section>
+
+            <!-- Other Insights Section -->
+            <section class="other-insights-v5 reveal">
+                <div class="green-accent-line"></div>
+                <h2 style="font-family: var(--font-serif); font-size: 42px; margin-bottom: 50px;">Other Insights</h2>
+                
+                <div class="v5-grid">
+                    <!-- Article 1 -->
+                    <a href="#" class="v5-card">
+                        <div class="v5-card-img">
+                            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcb82_Zonder%20bila%20geen%20zicht%20op%20het%20werk%20-%20bijgesneden.avif" alt="Insight 1">
+                        </div>
+                        <div class="v5-card-info">
+                            <span>March 5, 2026</span>
+                            <h3>Without bilas no view of the work</h3>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="#" class="v5-card">
+                        <div class="v5-card-img">
+                            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcbb8_bf5bc566e0213f5b083eae41b4d249e4.avif" alt="Insight 2">
+                        </div>
+                        <div class="v5-card-info">
+                            <span>January 29, 2026</span>
+                            <h3>Say goodbye to the Polish Diet</h3>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="#" class="v5-card">
+                        <div class="v5-card-img">
+                            <img src="https://cdn.prod.website-files.com/69e12ca9c69e68ea68efc7b7/69e12ca9c69e68ea68efcb81_985eeee20a2738cba702e73b4299beb6.avif" alt="Insight 3">
+                        </div>
+                        <div class="v5-card-info">
+                            <span>December 17, 2025</span>
+                            <h3>Informal power: use that energy</h3>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <style>
+        .other-insights-v5 {
+            background: #fff;
+            padding: 100px 5%;
+            border-radius: var(--radius-large);
+            margin-bottom: 40px;
+        }
+        .v5-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .v5-card {
+            text-decoration: none;
+            color: inherit;
+        }
+        .v5-card-img {
+            width: 100%;
+            height: 250px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .v5-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .v5-card:hover .v5-card-img img {
+            transform: scale(1.05);
+        }
+        .v5-card-info span {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--text-grey);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .v5-card-info h3 {
+            font-family: var(--font-serif);
+            font-size: 22px;
+            line-height: 1.3;
+        }
+        @media (max-width: 992px) {
+            .v5-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+        </div>
+    </main>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

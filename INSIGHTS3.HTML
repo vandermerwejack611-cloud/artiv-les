@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article V3 | Simphiwe Mtetwa</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --text-main: #121212;
+            --text-muted: #555555;
+            --accent-lime: #d4ff33;
+            --radius-large: 40px;
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #f4f4f4; /* Subtle grey background to make white content cards pop */
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .italic-accent {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* ====== HEADER ====== */
+        .floating-header {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            height: 72px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 1000;
+        }
+
+        .nav-logo img {
+            height: 24px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* ====== FULL WIDTH ARTICLE DESIGN ====== */
+        .article-v3-wrapper {
+            padding: 120px 20px 60px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Immersive Hero */
+        .hero-v3 {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            border-radius: var(--radius-large);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .hero-v3 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+            animation: heroZoom 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes heroZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        .hero-v3-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.8) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 80px;
+            color: #fff;
+        }
+
+        .hero-v3-overlay h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 5vw, 72px);
+            max-width: 1000px;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        /* Content Card */
+        .content-card-v3 {
+            background: #fff;
+            border-radius: var(--radius-large);
+            padding: 100px 5%;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.03);
+        }
+
+        .article-grid-v3 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .article-sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .sidebar-meta {
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-meta span {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .author-v3 {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .author-v3 img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .audio-pill {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Main Body Text */
+        .article-main-v3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .article-main-v3 p {
+            margin-bottom: 40px;
+        }
+
+        /* Full Width Quote Section */
+        .full-quote-v3 {
+            width: 100%;
+            background: var(--text-main);
+            color: #fff;
+            padding: 120px 10%;
+            border-radius: var(--radius-large);
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .full-quote-v3 h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 4vw, 56px);
+            font-style: italic;
+            line-height: 1.3;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .full-quote-v3 span {
+            display: block;
+            margin-top: 30px;
+            color: var(--accent-lime);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .article-grid-v3 { grid-template-columns: 1fr; gap: 40px; }
+            .hero-v3-overlay { padding: 40px; }
+            .content-card-v3 { padding: 60px 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="floating-header" id="mainHeader">
+        <a href="NEW.HTML" class="nav-logo">
+            <img src="https://www.image2url.com/r2/default/images/1777649055436-1057d549-9fe6-4e04-b970-568610a4c0a0.png" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="NEW.HTML"><i class="fas fa-home"></i></a></li>
+            <li><a href="NEW.HTML">Expertise</a></li>
+            <li><a href="INSIGHTS.HTML">Insights</a></li>
+            <li><a href="INSIGHTS2.HTML">Insights (2)</a></li>
+            <li><a href="INSIGHTS3.HTML">Insights (3)</a></li>
+            <li><a href="INSIGHTS4.HTML">Insights (4)</a></li>
+            <li><a href="INSIGHTS5.HTML">Insights (5)</a></li>
+            <li><a href="INSIGHTS6.HTML">Insights (6)</a></li>
+            <li><a href="INSIGHTS7.HTML">Insights (7)</a></li>
+            <li><a href="INSIGHTS8.HTML">Insights (8)</a></li>
+            <li><a href="#">Articles</a></li>
+        </ul>
+    </header>
+
+    <main class="article-v3-wrapper">
+        <!-- Hero Section -->
+        <section class="hero-v3 reveal">
+            <img src="https://simphiwemtetwa.africa/wp-content/uploads/2026/04/SIMPHIWE-MTETWA-1920-x-825-mm-12-scaled.jpg" alt="Article Image">
+            <div class="hero-v3-overlay">
+                <span class="tag" style="background: var(--accent-lime); color:#000; padding: 6px 16px; border-radius:100px; font-size:11px; font-weight:800; width:fit-content; margin-bottom:20px;">CSI INSIGHT</span>
+                <h1>Why Inequality Persists: Slaves Made a Deal with Their Masters and The Children of The Slaves Continue to uphold the Masters’ Deal</h1>
+                <div class="author-v3">
+                    <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=96&d=mm&r=g" alt="Simphiwe Mtetwa">
+                    <div>
+                        <strong style="font-size: 16px;">Simphiwe Mtetwa</strong><br>
+                        <span style="font-size: 13px; opacity: 0.8;">April 15, 2026 • 6 min read</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="content-card-v3 reveal">
+            <div class="article-grid-v3">
+                <aside class="article-sidebar">
+                    <div class="sidebar-meta">
+                        <span>Listen to the podcast</span>
+                        <div class="audio-pill">
+                            <i class="fas fa-headphones" style="font-size: 24px; color: var(--accent-lime);"></i>
+                            <audio controls style="width: 100%;">
+                                <source src="https://simphiwemtetwa.africa/wp-content/uploads/2026/04/SIMPHIWE-MTETWA-1920-x-825-mm-1.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="sidebar-meta" style="border-bottom:0;">
+                        <span>Key Themes</span>
+                        <p style="font-size: 14px; font-weight: 500;">Structural Inequality • Corporate Responsibility • South African History • Economic Reform</p>
+                    </div>
+                </aside>
+
+                <article class="article-main-v3">
+                    <p><strong style="font-family: var(--font-serif); font-size: 1.5em; color: var(--text-main);">T</strong>here is a detail from South Africa’s corporate history that deserves far greater attention than it receives — and it belongs, fittingly, at the beginning of this story. In the mid-1980s, as apartheid entered its final phase and pressure mounted both domestically and internationally, Anglo-American, the most powerful mining conglomerate in the country at the time, did not simply wait for history to unfold. It prepared for it. Under the leadership of its chairman Gavin Relly, and driven by executive Clem Sunter, the company developed a series of scenario-planning models that would later become widely known as the “High Road” and the “Low Road”.</p>
+
+                    <p>These were not abstract exercises. Sunter presented these scenarios to the cabinet of F. W. de Klerk and engaged, shortly before his release, with Nelson Mandela. By the early 1990s, the Montfleur Scenario Exercise had expanded this work, bringing together political leaders, business figures, trade unionists and intellectuals to map the country’s possible futures. Business, in other words, had done its arithmetic long before the negotiations began.</p>
+
+                    <p>It had examined the full range of outcomes, calculated what would need to be conceded to preserve the system, and quietly determined that what it was willing to offer would be only a fraction of what it possessed. That is the context—deliberate, calculated, and historically documented—in which one must understand a striking insight from Steven Friedman.</p>
+                </article>
+            </div>
+        </div>
+
+        <!-- Full Width Pull Quote -->
+        <section class="full-quote-v3 reveal">
+            <h2>"Slaves made a deal with their masters!"</h2>
+            <span>Steven Friedman, Political Scientist</span>
+        </section>
+
+        <!-- Second Content Card -->
+        <div class="content-card-v3 reveal">
+            <div class="article-grid-v3">
+                <div class="article-sidebar">
+                    <!-- Blank or metadata -->
+                </div>
+                <article class="article-main-v3">
+                    <p>It is an image that is difficult to shake: think about it, slaves seated at a table, negotiating with their masters. The force of that idea became clearer to me through an entirely ordinary, domestic experience. Recently, I had to carry out some maintenance on my house. There were cracked tiles, peeling paint, and a roof beginning to yield to the Johannesburg rains. I sat down and worked through the costs — tiles, waterproofing, sealant, labour — and arrived at a figure of roughly R10,000.</p>
+
+                    <p>Enough to see the house safely through winter. But there was something I did not say aloud at the time. I could afford R10,000 precisely because I had considerably more than R10,000. My willingness to spend that amount rested on a quiet certainty: that doing so would not destabilise me. The apparent generosity of the gesture — if it can even be called that — was entirely relative to what remained unseen.</p>
+
+                    <p>That small moment stayed with me long after the last tile had been laid. This moment serves, in its own quiet way, as a precise metaphor for how inequality in South Africa was constructed—and why, thirty years into democracy, it persists. As liberation became inevitable, those who controlled economic power did not simply yield. They prepared. They calculated, with care, how much they were willing to place on the table—and they ensured that what they offered would not threaten what they intended to keep.</p>
+
+                    <p>This is not a moral judgement on those who negotiated the transition. It is an observation about power, context and human psychology. When a door has been closed to you for a lifetime, your first impulse when it opens is not to question the architecture of the room. It is to step inside. Yet the room — and the table within it — had already been designed. This is the foundation of Friedman’s central argument: that South Africa is divided not simply by race or class, but by a more enduring distinction between insiders and outsiders.</p>
+
+                    <p>Under apartheid, this divide was explicitly racial. Today, it is formally economic, though still deeply shaped by the racial architecture of the past. What is striking is not only that the divide persists but also that the original settlement produced a particular kind of insider class — one that inherited access to the economy but not necessarily the freedom to reimagine it.</p>
+
+                    <p>What Friedman ultimately calls for is not incremental reform, but a shift in imagination — a willingness to confront the structural limits embedded in the original settlement. Those who came to the negotiating table with power understood something fundamental: you can only give away what you are prepared to lose. What was offered was carefully calibrated. It was enough to secure transition, but not enough to fundamentally redistribute power. Thirty years later, South Africa remains shaped by that calculation. The challenge now is not simply to do more within the existing framework but to question the framework itself.</p>
+                </article>
+            </div>
+        </div>
+
+        <!-- Footer Bio Card -->
+        <section class="content-card-v3 reveal" style="background: var(--text-main); color: #fff;">
+            <div class="author-v3" style="flex-direction: column; text-align: center;">
+                <img src="https://secure.gravatar.com/avatar/5c4f7d314b1333a63f1f505274fed38df3f9317a1cfd3722aba48a88a738a663?s=140&d=mm&r=g" alt="Author" style="width: 140px; height: 140px;">
+                <h3 style="font-family: var(--font-serif); font-size: 32px; margin: 20px 0;">Simphiwe Mtetwa</h3>
+                <p style="max-width: 800px; font-size: 16px; opacity: 0.7;">Simphiwe Mtetwa is South Africa’s leading Corporate Social Responsibility news, media and publishing firm. We create content on social responsibility, helping government, corporates, consultants, NPOs and NGOs to reach their target markets through appropriate, targeted development news.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
